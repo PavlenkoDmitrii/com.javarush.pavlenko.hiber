@@ -3,17 +3,17 @@ package com.javarush.pavlenko.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javarush.pavlenko.entity.redis.CityCountry;
-import com.javarush.pavlenko.repository.redis.RedisConnector;
+import com.javarush.pavlenko.config.redis.RedisConnector;
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
 
-public class DataRedis {
+public class RedisData {
 
     private final Jedis jedis;
     private final ObjectMapper objectMapper;
 
-    public DataRedis() {
+    public RedisData() {
         jedis = RedisConnector.getRedisConnector();
         objectMapper = new ObjectMapper();
     }
@@ -28,5 +28,15 @@ public class DataRedis {
         }
     }
 
-
+    public void testRedisData(List<Integer> ids) {
+        for (Integer id : ids) {
+            String value = jedis.get(String.valueOf(id));
+            try {
+                objectMapper.readValue(value, CityCountry.class);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
+

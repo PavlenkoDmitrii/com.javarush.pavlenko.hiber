@@ -1,4 +1,4 @@
-package com.javarush.pavlenko.repository.hibernate;
+package com.javarush.pavlenko.config.hibernate;
 
 import com.javarush.pavlenko.entity.City;
 import com.javarush.pavlenko.entity.Country;

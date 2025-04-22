@@ -4,7 +4,7 @@ import com.javarush.pavlenko.entity.City;
 import com.javarush.pavlenko.entity.Country;
 import com.javarush.pavlenko.repository.dao.CityDAO;
 import com.javarush.pavlenko.repository.dao.CountryDAO;
-import com.javarush.pavlenko.repository.hibernate.HibernateConnector;
+import com.javarush.pavlenko.config.hibernate.HibernateConnector;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

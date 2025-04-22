@@ -1,4 +1,4 @@
-package com.javarush.pavlenko.repository.redis;
+package com.javarush.pavlenko.config.redis;
 
 import redis.clients.jedis.Jedis;
 
