@@ -37,10 +37,10 @@ public class SpeedTest {
         List<City> allCities = fetchData.getFetchedData();
         List<CityCountry> preparedData = transformData.getTransformedData(allCities);
         redisData.pushToRedis(preparedData);
+        sessionFactory.getCurrentSession().close();
     }
 
     public void run() {
-        sessionFactory.getCurrentSession().close();
         List<Integer> ids = List.of(3, 2545, 123, 4, 189, 89, 3458, 1189, 10, 102);
 
         long startRedis = System.currentTimeMillis();

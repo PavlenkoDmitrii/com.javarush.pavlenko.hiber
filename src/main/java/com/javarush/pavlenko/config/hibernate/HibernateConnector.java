@@ -23,6 +23,7 @@ public class HibernateConnector {
         if (instance == null) {
             instance = new HibernateConnector();
         }
+        System.out.println("\nConnected to Hiber\n");
         return instance.sessionFactory;
     }
 }
